@@ -1,0 +1,55 @@
+<body>
+
+
+    <!--Head-->
+    <header class="img text-white text-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">¡Bienvenido a Doctor Online!</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 ol-xl-7 mx-auto">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input type="word" class="form-control form-control-lg"
+                                    placeholder="¿Qué doctor buscas?">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <a type="button" class="btn btn-primary btn-lg" href="/listadoctores">
+                                    Buscar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Top Doctors-->
+    <section class="topDrs text-center bg-light">
+        <div class="container">
+
+            <h2 class="mb-5">Top Doctors</h2>
+
+            <div class="row">
+
+
+                <div class="col-lg-4" *ngFor="let doctor of doctors;">
+                    <div class="topDrs-item mx-auto mb-5 mb-lg-0">
+                        <img class="img-thumbnail rounded-circle mb-3" src={{doctor.photo}} alt="topDr1"
+                            max-height="300" max-width="300">
+                        <h5>{{doctor.name}}</h5>
+                        <p class="font-weight-light mb-0">{{doctor.position}}</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+</body>

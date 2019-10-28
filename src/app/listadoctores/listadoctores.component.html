@@ -1,0 +1,45 @@
+<body>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="col-12">
+    <label for="exampleFormControlSelect1">Especialidades</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Pediatria</option>
+      <option>ginecología</option>
+      <option>Cardiología</option>
+      <option>Neurología</option>
+      <option>Dermatología</option>
+      <option>Medicina Interna</option>
+    </select>
+  </div>
+
+  <div class="container mt-5 pt-5 col-12">
+
+    <div class="row card-group">
+      <div class="col-lg-4 col-xl-4 col-md-4 col-sm-6 col-xs-12 mb-4" *ngFor="let doctor of doctors">
+        <div class="card">
+            <div class="card-header">{{doctor.name}}</div>
+            <img class="img-fluid" src={{doctor.photo}} alt="topDr1">
+          <div class="card-body">
+            <p class="card-text">{{doctor.details}}</p>
+          </div>
+          <div class="card-footer text-muted">
+              Valoración: {{doctor.valoration}}/5
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+</body>

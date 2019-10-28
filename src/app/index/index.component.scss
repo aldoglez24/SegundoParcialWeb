@@ -1,0 +1,73 @@
+body {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+  
+  header.img {
+    position: relative;
+    background-color: #343a40;
+    background: url('../../assets/images/stethoscope.jpg') no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  
+  header.img .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+  }
+  @mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($bg,25%);
+    } 
+  }
+  
+  header.img h1 {
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    header.img {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+    header.img h1 {
+      font-size: 3rem;
+    }
+  }
+  .topDrs {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  
+  .topDrs .topDrs-item {
+    max-width: 18rem;
+  }
+  
+  .topDrs .topDrs-img {
+    min-height: 30rem;
+    background-size: cover;
+  }
+
+  footer.footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .btn btn-primary{
+    @include button-bg(#2ecc71);
+  }
