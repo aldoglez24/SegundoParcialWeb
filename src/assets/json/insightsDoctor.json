@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Estudios por interpretar",
+        "value": 20,
+        "color": "warning"
+    },
+    {
+        "name": "Estudios interpetados",
+        "value": 30,
+        "color": "primary"
+    },
+    {
+        "name": "Ingresos",
+        "value": "$6,799",
+        "color": "success"
+    },
+    {
+        "name": "Valoración",
+        "value": "4.8/5",
+        "color": "info"
+    }
+]

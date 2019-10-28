@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-homedoctor',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomedoctorComponent implements OnInit {
 
-  constructor() { }
+  insights: any;
+
+  constructor(private http: HttpClient) { }
+
 
   ngOnInit() {
+
+
   }
+
 
 }

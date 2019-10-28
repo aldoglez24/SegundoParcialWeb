@@ -1,0 +1,17 @@
+
+
+<div class="row m-3">
+
+<div class="pb-3 col-lg-3 col-xl-3 col-md-6 col-sm-6 col-xs-12" *ngFor="let insight of insights">
+    <div class="card text-white w-100 bg-{{insight.color}}">
+        <div class="card-header">
+            {{insight.name}}
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{insight.value}}</p>
+        </div>
+    </div>
+</div>
+
+</div>
+
