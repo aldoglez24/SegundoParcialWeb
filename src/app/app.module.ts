@@ -22,7 +22,8 @@ import { Registrodoctor1Component } from './registrodoctor1/registrodoctor1.comp
 import { RegistropacienteComponent } from './registropaciente/registropaciente.component';
 import { IngresarestudioComponent } from './ingresarestudio/ingresarestudio.component';
 import { HttpClientModule } from '@angular/common/http';
-import { InsightsDoctorComponent } from './insights-doctor/insights-doctor.component'; 
+import { InsightsDoctorComponent } from './insights-doctor/insights-doctor.component';
+import { EstudioInterpretarComponent } from './estudio-interpretar/estudio-interpretar.component'; 
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { InsightsDoctorComponent } from './insights-doctor/insights-doctor.compo
     Registrodoctor1Component,
     RegistropacienteComponent,
     IngresarestudioComponent,
-    InsightsDoctorComponent
+    InsightsDoctorComponent,
+    EstudioInterpretarComponent
   ],
   imports: [
     BrowserModule,
