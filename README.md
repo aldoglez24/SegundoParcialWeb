@@ -1,5 +1,13 @@
 # Parcial2
 
+Proyecto en angular
+
+Para iniciar sesión es necesario usar el user:
+- doctor
+- paciente
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 
 ## Development server
