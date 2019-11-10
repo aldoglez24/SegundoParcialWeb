@@ -2,12 +2,31 @@
 
 
 <app-navbar-doctor></app-navbar-doctor>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <button type="button" class="btn btn-secondary" (click)="toggleRotate()">Rotate</button>
+        
+        
+      </div>
+      <div class="col-sm">
+            <button type="button" class="btn btn-secondary" (click)="toggleReset()">Reset</button>
+      </div>
+      <div class="col-sm">
+            <button type="button" class="btn btn-secondary" (click)="toggleZoom()">Zoom</button>
+      </div>
+      <div class="col-sm">
+        
+      </div>
+      
+    </div>
+  </div>
 
 <div class="row w-100">
 
     <div class="pl-5 pt-4 col-sm-12 col-md-12 col-lg-8">
         <div class="card">
-            <div class="card-body">
+            <div [@photoState]="isZoom == 1 ? 'enlarge' : isZoom == 2 ? 'spin' : 'enshort'" class="open-close-container card-body top">
                 <img src="https://media.sciencephoto.com/image/c0272273/800wm" style="width: 100%" alt="">
             </div>
         </div>
@@ -16,7 +35,7 @@
     <div class="pl-5 pt-4 col-sm-12 col-md-12 col-lg-4">
         <div class="card w-100 mb-4" style="height:20rem">
             <div class="card-body">
-                Zoom de la imagen
+                
             </div>
         </div>
 
