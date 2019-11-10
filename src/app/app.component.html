@@ -1,9 +1,28 @@
-<app-navbar-index></app-navbar-index>
+<nav class="navbar navbar-expand-sm pt-0 pb-0">
+  <div class="navbar-nav ml-auto align-items-center">
+    <span class="mr-3">{{ "lenguaje" | translate }}</span>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-light" (click)="useLanguage('es')">
+        <!-- {{ "spanish" | translate }} -->
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
+          width="30"
+        />
+      </button>
+      <button type="button" class="btn btn-light" (click)="useLanguage('en')">
+        <!-- {{ "ingles" | translate }} -->
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+          width="30"
+        />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<app-navbar-index *ngIf="hidden"></app-navbar-index>
 
 <!--Se sustitute por el router outlet-->
 <router-outlet></router-outlet>
 
-
 <app-footer-index></app-footer-index>
-
-
