@@ -1,35 +1,30 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
-
   isLoggedIn = false;
   loginType = "";
 
-  constructor() { }
+  constructor() {}
 
-
-
-  login(email, password){
-
+  login(email, password) {
     var route = "";
 
-    if(email == "doctor"){
+    if (email == "doctor") {
       this.isLoggedIn = true;
-      this.loginType = "doctor"; 
+      this.loginType = "doctor";
       route = "doctor";
-
-    }else if (email == "paciente"){
+    } else if (email == "paciente") {
       this.isLoggedIn = true;
-      this.loginType = "paciente"; 
+      this.loginType = "paciente";
       route = "paciente";
     }
 
-    return route
+    localStorage.setItem("auth", this.isLoggedIn ? "1" : "0");
+    email && localStorage.setItem("type", email);
 
+    return route;
   }
-
-
 }
