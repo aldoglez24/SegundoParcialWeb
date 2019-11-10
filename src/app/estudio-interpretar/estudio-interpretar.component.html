@@ -1,29 +1,34 @@
 <div class="col-12 mb-3">
-    <div class="row card-group card-deck-studies">
-        <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3" *ngFor="let estudio of estudios">
-
-
-            <div class="card">
-
-                <img class="card-img-top center" style="width: 10rem;" src=""
-                    alt="Card image cap">
-                <div class="card-body">
-
-
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Nombre: {{estudio.name}}</li>
-                        <li class="list-group-item">Edad: {{estudio.year}} años</li>
-                        <li class="list-group-item">Tipo de estudio: {{estudio.study}}</li>
-                        <a href="/interpretar" class="btn btn-primary">Interpretar</a>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-
+  <div class="row card-group card-deck-studies">
+    <div
+      class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-xs-12 mt-3"
+      *ngFor="let estudio of estudios"
+    >
+      <div class="card">
+        <img
+          class="card-img-top center"
+          style="width: 10rem;"
+          src="../../assets/images/user.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              {{ "nombre" | translate }}: {{ estudio.name }}
+            </li>
+            <li class="list-group-item">
+              {{ "edad" | translate }}: {{ estudio.year }}
+              {{ "old" | translate }}
+            </li>
+            <li class="list-group-item">
+              {{ "tipo.estudio" | translate }}: {{ estudio.study }}
+            </li>
+            <a href="/interpretar" class="btn btn-primary">{{
+              "interpretar" | translate
+            }}</a>
+          </ul>
         </div>
+      </div>
     </div>
-
+  </div>
 </div>

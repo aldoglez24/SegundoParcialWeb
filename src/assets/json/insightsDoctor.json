@@ -1,22 +1,22 @@
 [
-    {
-        "name": "Estudios por interpretar",
-        "value": 20,
-        "color": "warning"
-    },
-    {
-        "name": "Estudios interpetados",
-        "value": 30,
-        "color": "primary"
-    },
-    {
-        "name": "Ingresos",
-        "value": "$6,799",
-        "color": "success"
-    },
-    {
-        "name": "Valoración",
-        "value": "4.8/5",
-        "color": "info"
-    }
+  {
+    "name": "estudios.interpretar",
+    "value": 20,
+    "color": "warning"
+  },
+  {
+    "name": "estudios.interpretados",
+    "value": 30,
+    "color": "primary"
+  },
+  {
+    "name": "ingresos",
+    "value": "$6,799",
+    "color": "success"
+  },
+  {
+    "name": "valoracion",
+    "value": "4.8/5",
+    "color": "info"
+  }
 ]
