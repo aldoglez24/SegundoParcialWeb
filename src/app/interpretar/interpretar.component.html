@@ -1,67 +1,38 @@
+import { Component, HostBinding, Input, OnInit, Output } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs/Observable";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+  // ...
+} from "@angular/animations";
 
+@Component({
+  selector: "app-index",
+  templateUrl: "./index.component.html",
+  styleUrls: ["./index.component.scss"],
+  animations: []
+})
+export class IndexComponent implements OnInit {
+  public doctors: any;
 
+  initialCount: number = 10;
 
-<app-navbar-doctor></app-navbar-doctor>
-<div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <button type="button" class="btn btn-secondary" (click)="toggleRotate()">Rotate</button>
-        
-        
-      </div>
-      <div class="col-sm">
-            <button type="button" class="btn btn-secondary" (click)="toggleReset()">Reset</button>
-      </div>
-      <div class="col-sm">
-            <button type="button" class="btn btn-secondary" (click)="toggleZoom()">Zoom</button>
-      </div>
-      <div class="col-sm">
-        
-      </div>
-      
-    </div>
-  </div>
+  constructor(private http: HttpClient) {}
 
-<div class="row w-100">
+  ngOnInit() {
+    this.getJSON().subscribe(response => {
+      //Estos son los 3 mejores doctores, se despliegan en el index, salen del JSON
+      this.doctors = response;
+    });
 
-    <div class="pl-5 pt-4 col-sm-12 col-md-12 col-lg-8">
-        <div class="card">
-            <div [@photoState]="isZoom == 1 ? 'enlarge' : isZoom == 2 ? 'spin' : 'enshort'" class="open-close-container card-body top">
-                <img src="https://media.sciencephoto.com/image/c0272273/800wm" style="width: 100%" alt="">
-            </div>
-        </div>
-    </div>
+    //this.sendMessage();
+  }
 
-    <div class="pl-5 pt-4 col-sm-12 col-md-12 col-lg-4">
-        <div class="card w-100 mb-4" style="height:20rem">
-            <div class="card-body">
-                
-            </div>
-        </div>
-
-        <div class="card w-100">
-            <div class="card-header">
-                Aldo A. González
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Edad: 22</li>
-                <li class="list-group-item">Sexo: M</li>
-                <li class="list-group-item">FC: 140</li>
-                <li class="list-group-item">P: 50</li>
-                <li class="list-group-item">Q: 123</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="col-12 p-4">
-
-    <div class="card col-12">
-        <div class="card-body">
-            <h5 class="card-title">Interpretación</h5>
-        </div>
-        <ul class="list-group list-group-flush m-3">
-            <textarea class="form-control" width="100%" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </ul>
-        <a href="/doctor" class="btn btn-primary float-right mb-4">Mandar!</a>
-    </div>
-</div>
+  public getJSON(): Observable<any> {
+    return this.http.get("./assets/json/bestDoctors.json");
+  }
+}
