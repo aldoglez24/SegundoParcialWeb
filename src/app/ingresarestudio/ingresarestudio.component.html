@@ -1,35 +1,55 @@
 <app-navbar-patient></app-navbar-patient>
 
-
 <section>
-        <div class="container">
-          <h1 style="text-align: center">Ingrese sus estudios</h1>
-          <div class="form-group">
-            <label for="inputName">Nombre</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Nombre">
-          </div>
-          <div class="form-group">
-            <label for="inputLname">Apellidos</label>
-            <input type="text" class="form-control" id="inputLname" placeholder="Apellidos">
-          </div>
-          <div class="form-group">
-            <label for="inputIdStudy">Tipo de estudio</label>
-            <input type="text" class="form-control" id="inputIdStudy" placeholder="Estudio">
-          </div>
-          <div class="form-group">
-            <label for="inputLab">Laboratorio</label>
-            <input type="text" class="form-control" id="inputLab" placeholder="Laboratorio">
-          </div>
-          <div class="form-group">
-           <input type="file" />
-          </div>
-          <div class="form-group">
-              <a href="paciente">
-                <button class="btn btn-primary" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Continuar</button>
-              </a>
-          </div>
-        </div>
-      </section>
-    
+  <div class="container">
+    <h1 style="text-align: center">{{ "ingrese.estudios" | translate }}</h1>
+    <div class="form-group">
+      <label for="inputName">{{ "nombre" | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        placeholder="{{ 'nombre' | translate }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputLname">{{ "apellidos" | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputLname"
+        placeholder="{{ 'apellidos' | translate }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputIdStudy">{{ "tipo.estudio" | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputIdStudy"
+        placeholder="{{ 'tipo.estudio' | translate }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputLab">{{ "laboratorio" | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputLab"
+        placeholder="{{ 'laboratorio' | translate }}"
+      />
+    </div>
+    <div class="form-group">
+      <input type="file" />
+    </div>
+    <div class="form-group">
+      <a href="paciente">
+        <button class="btn btn-primary" type="button" id="btn-signup">
+          <i class="fas fa-user-plus"></i> {{ "next" | translate }}
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
 
-<app-footer-index></app-footer-index>
+<!-- <app-footer-index></app-footer-index> -->
