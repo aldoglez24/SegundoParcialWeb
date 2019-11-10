@@ -1,31 +1,52 @@
 <div id="sign">
-    <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <a class="navbar-brand" href="catalogo.html"></a>
+    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
+      {{ "inicio.sesion" | translate }}
+    </h1>
+    <input
+      name="email"
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      placeholder="{{ 'email' | translate }}"
+      required=""
+      autofocus=""
+      [(ngModel)]="loginKeys.email"
+    />
+    <input
+      name="password"
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="{{ 'password' | translate }}"
+      required=""
+      [(ngModel)]="loginKeys.password"
+    />
 
-        <a class="navbar-brand" href="catalogo.html"></a>
-        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Inicia sesión</h1>
-        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" [(ngModel)]="loginKeys.email">
-        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="" [(ngModel)]="loginKeys.password">
+    <button class="btn btn-success btn-block" type="submit" id="btn-signup">
+      <i class="fas fa-user-plus"></i> {{ "inicio.sesion" | translate }}
+    </button>
 
+    <a href="#" id="forgot_pswd">{{ "olvidaste.password" | translate }}</a>
+    <hr />
 
-        <button class="btn btn-success btn-block" type="submit" id="btn-signup"><i class="fas fa-user-plus"></i>
-            Iniciar sesión</button>
-
-
-        <a href="#" id="forgot_pswd">¿Olvidaste tu contraseña?</a>
-        <hr>
-
-        <!-- <p>Don't have an account!</p>  -->
-        <a href="/registrodoctor">
-            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
-                Registrarse como Doctor</button>
-        </a>
-        <a href="/registropaciente">
-            <button class="btn btn-secondary btn-block" type="button" id="btn-signup" href="registropaciente"><i
-                    class="fas fa-user-plus"></i> Registrarse como Paciente </button>
-        </a>
-
-
-
-    </form>
-    <br>
+    <!-- <p>Don't have an account!</p>  -->
+    <a href="/registrodoctor">
+      <button class="btn btn-primary btn-block" type="button" id="btn-signup">
+        <i class="fas fa-user-plus"></i> {{ "registrar.doctor" | translate }}
+      </button>
+    </a>
+    <a href="/registropaciente">
+      <button
+        class="btn btn-secondary btn-block"
+        type="button"
+        id="btn-signup"
+        href="registropaciente"
+      >
+        <i class="fas fa-user-plus"></i>{{ "registrar.paciente" | translate }}
+      </button>
+    </a>
+  </form>
+  <br />
 </div>
