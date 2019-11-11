@@ -26,6 +26,7 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     this.getJSON().subscribe(response => {
       //Estos son los 3 mejores doctores, se despliegan en el index, salen del JSON
+      
       this.doctors = response;
     });
 
