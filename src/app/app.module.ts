@@ -29,6 +29,12 @@ import { HttpClientModule } from "@angular/common/http";
 import { InsightsDoctorComponent } from "./insights-doctor/insights-doctor.component";
 import { EstudioInterpretarComponent } from "./estudio-interpretar/estudio-interpretar.component";
 import { LogoutComponent } from './logout/logout.component';
+import { Routes, RouterModule } from '@angular/router';
+import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
+import { ChartsModule } from 'ng2-charts';
+import { MyDoughnutChartComponent } from './my-doughnut-chart/my-doughnut-chart.component';
+import { MyRadarChartComponent } from './my-radar-chart/my-radar-chart.component';
+import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,11 @@ import { LogoutComponent } from './logout/logout.component';
     IngresarestudioComponent,
     InsightsDoctorComponent,
     EstudioInterpretarComponent,
-    LogoutComponent
+    LogoutComponent,
+    MyBarChartComponent,
+    MyDoughnutChartComponent,
+    MyRadarChartComponent,
+    MyPieChartComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +70,7 @@ import { LogoutComponent } from './logout/logout.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ChartsModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
