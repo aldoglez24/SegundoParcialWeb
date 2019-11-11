@@ -27,23 +27,9 @@
   
   </div>
 </nav>
+
 <app-navbar-index *ngIf="hidden"></app-navbar-index>
-<div class="container">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/bar-chart">Usuarios Registrados</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/doughnut-chart">Doctores por especialidad</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/radar-chart">Casos Resueltos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/pie-chart">Casos Resueltos por Especialidad</a>
-      </li>
-    </ul>
-    <div>
+
 <!--Se sustitute por el router outlet-->
 <router-outlet></router-outlet>
 

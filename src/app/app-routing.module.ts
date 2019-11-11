@@ -14,11 +14,6 @@ import { Registrodoctor1Component } from "./registrodoctor1/registrodoctor1.comp
 import { RegistropacienteComponent } from "./registropaciente/registropaciente.component";
 import { IngresarestudioComponent } from "./ingresarestudio/ingresarestudio.component";
 import { LogoutComponent } from "./logout/logout.component";
-import { ChartsModule } from 'ng2-charts';
-import {MyBarChartComponent} from "./my-bar-chart/my-bar-chart.component";
-import{MyDoughnutChartComponent} from "./my-doughnut-chart/my-doughnut-chart.component";
-import{MyPieChartComponent} from "./my-pie-chart/my-pie-chart.component";
-import{MyRadarChartComponent} from "./my-radar-chart/my-radar-chart.component";
 
 const routes: Routes = [
   { path: "", component: IndexComponent },
@@ -34,12 +29,7 @@ const routes: Routes = [
   { path: "registrodoctor1", component: Registrodoctor1Component },
   { path: "registropaciente", component: RegistropacienteComponent },
   { path: "ingresarestudio", component: IngresarestudioComponent },
-  { path: "logout", component: LogoutComponent },
-  {path: 'bar-chart', component: MyBarChartComponent},
-  {path: 'doughnut-chart', component: MyDoughnutChartComponent},
-  {path: 'radar-chart', component: MyRadarChartComponent},
-  {path: 'pie-chart', component: MyPieChartComponent},
-  {path: '**', component: MyBarChartComponent }
+  { path: "logout", component: LogoutComponent }
 ];
 
 @NgModule({
