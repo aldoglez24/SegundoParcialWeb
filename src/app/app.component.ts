@@ -14,9 +14,32 @@ export class AppComponent {
     private auth: AuthService,
     private translate: TranslateService
   ) {
+
+
+
+    /*
     const lang = localStorage.getItem("lang") || "es";
+    translate.setDefaultLang(lang);
+    */
+
+    var lang = "en";
+
+    console.log(localStorage.getItem("lang"));
+
+
+    //Lenguaje del navegador
+    var userLang = (navigator.languages
+      ? navigator.languages[0]
+      : (navigator.language)).split("-")[0]
+    console.log(`Idioma del navegador: ${userLang}`)
+
+    //Solo si es español o ingles
+    if(userLang == "es" || userLang == "en"){
+      lang = userLang;
+    }
 
     translate.setDefaultLang(lang);
+
   }
   title = "parcial2";
   private routesHidden: string[] = [
@@ -39,9 +62,11 @@ export class AppComponent {
           _auth = localStorage.getItem("auth") == "1" ? true : false;
         }
 
+
         this.isLoggedin = _auth;
 
         this.isHide(event);
+
       }
     });
   }

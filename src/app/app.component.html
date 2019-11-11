@@ -1,6 +1,11 @@
-<nav class="navbar navbar-expand-sm pt-0 pb-0">
+
+
+
+
+<nav class="navbar navbar-expand-sm pt-0 pb-0 d-none">
   <div class="navbar-nav ml-auto align-items-center">
-    <span class="mr-3">{{ "lenguaje" | translate }}</span>
+    <span style="display: none;" class="mr-3">{{ "lenguaje" | translate }}</span>
+
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-light" (click)="useLanguage('es')">
         <!-- {{ "spanish" | translate }} -->
@@ -17,6 +22,9 @@
         />
       </button>
     </div>
+  
+  
+  
   </div>
 </nav>
 
