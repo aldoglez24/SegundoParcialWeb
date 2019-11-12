@@ -81,6 +81,10 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+
+
+
   
   div.image-logo-header {
     background:url('../../assets/images/doctor_online_logo.png');
@@ -88,3 +92,22 @@ body {
     background-repeat: no-repeat;
   }
   
+  div.first-slide{
+    background:url('../../assets/images/wallpaper-1.jpg');
+    
+  }
+  div.second-slide{
+    background:url('../../assets/images/wallpaper-2.jpg');
+   
+  }
+  div.third-slide{
+    background:url('../../assets/images/wallpaper-3.jpg');
+   
+  }
+
+  div.div-carrousel{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: center; 
+  }

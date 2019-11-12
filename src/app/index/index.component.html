@@ -21,7 +21,7 @@
                   placeholder="{{ 'doctor.buscas' | translate }}" />
               </div>
               <div class="col-12 col-md-3">
-                <a  class="btn btn-primary btn-lg" href="/listadoctores">
+                <a class="btn btn-primary btn-lg" href="/listadoctores">
                   {{ "buscar" | translate }}
                 </a>
               </div>
@@ -32,31 +32,50 @@
     </div>
   </header>
 
-    <section class="topDrs text-center bg-light">
-      <div class="container">
-        <h2 class="mb-5">{{ "top.doctores" | translate }}</h2>
-  
-        <div class="row">
-          <div class="col-lg-4" *ngFor="let doctor of doctors">
-            <div class="topDrs-item mx-auto mb-5 mb-lg-0">
-              <img
-                class="img-thumbnail rounded-circle mb-3"
-                src="{{ doctor.photo }}"
-                alt="topDr1"
-                max-height="300"
-                max-width="300"
-              />
-              <h5>{{ doctor.name }}</h5>
-              <p class="font-weight-light mb-0">
-                {{ doctor.position | translate }}
-              </p>
-            </div>
+  <section>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active div-carrousel first-slide">
+          primera
+        </div>
+        <div class="carousel-item div-carrousel second-slide">
+          segunda
+        </div>
+        <div class="carousel-item div-carrousel third-slide">
+          tercera
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="topDrs text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">{{ "top.doctores" | translate }}</h2>
+
+      <div class="row">
+        <div class="col-lg-4" *ngFor="let doctor of doctors">
+          <div class="topDrs-item mx-auto mb-5 mb-lg-0">
+            <img class="img-thumbnail rounded-circle mb-3" src="{{ doctor.photo }}" alt="topDr1" max-height="300"
+              max-width="300" />
+            <h5>{{ doctor.name }}</h5>
+            <p class="font-weight-light mb-0">
+              {{ doctor.position | translate }}
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  
+
 
 
 </body>
