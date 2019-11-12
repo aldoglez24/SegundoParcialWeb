@@ -29,6 +29,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { InsightsDoctorComponent } from "./insights-doctor/insights-doctor.component";
 import { EstudioInterpretarComponent } from "./estudio-interpretar/estudio-interpretar.component";
 import { LogoutComponent } from './logout/logout.component';
+import { InsightsPatientComponent } from './insights-patient/insights-patient.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { LogoutComponent } from './logout/logout.component';
     IngresarestudioComponent,
     InsightsDoctorComponent,
     EstudioInterpretarComponent,
-    LogoutComponent
+    LogoutComponent,
+    InsightsPatientComponent
   ],
   imports: [
     BrowserModule,
