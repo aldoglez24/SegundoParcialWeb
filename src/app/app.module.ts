@@ -31,6 +31,10 @@ import { EstudioInterpretarComponent } from "./estudio-interpretar/estudio-inter
 import { LogoutComponent } from './logout/logout.component';
 import { InsightsPatientComponent } from './insights-patient/insights-patient.component';
 
+
+import { ChartsModule } from 'ng2-charts';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +62,7 @@ import { InsightsPatientComponent } from './insights-patient/insights-patient.co
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

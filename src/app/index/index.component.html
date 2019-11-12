@@ -32,6 +32,21 @@
     </div>
   </header>
 
+
+  <section>
+
+    <div>
+      <div>
+        <div class="chart" style="margin: 30px;">
+          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
   <section>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
