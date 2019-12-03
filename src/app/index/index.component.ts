@@ -87,15 +87,6 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
 
 
-    this.fsqService.getPlaces() 
-      .subscribe(
-      (data) => { // Success
-        console.log(data);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
 
 
     if(localStorage.getItem("auth")=="1"){
