@@ -92,5 +92,8 @@
   "neurologia": "Neurology",
   "dermatologia": "Dermatology",
   "medicina.interna": "Internal Medicine",
-  "ingresos": "Income"
+  "ingresos": "Income",
+  "nextPage": "Next",
+  "prevPage": "Prev"
+
 }

@@ -17,6 +17,7 @@ export class NavbarIndexComponent implements OnInit {
   //Esta variable va a guardar si ya se iniciaron sesión
   isLoggedin;
   loginType;
+  userName;
 
   constructor(private router: Router, private auth: AuthService) {}
 
@@ -32,6 +33,7 @@ export class NavbarIndexComponent implements OnInit {
         // this.isLoggedin = !this.auth.isLoggedIn;
         this.isLoggedin = !_auth;
         this.loginType = localStorage.getItem("type") || ""; //this.auth.loginType;
+        this.userName = localStorage.getItem("userName");
       }
     });
   }

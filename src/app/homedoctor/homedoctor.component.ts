@@ -21,11 +21,16 @@ export class HomedoctorComponent implements OnInit {
 
   ngOnInit() {
 
-    var auth = localStorage.getItem("auth");
-    var auth = localStorage.getItem("auth");
-    var auth = localStorage.getItem("auth");
 
-    
+
+    this.getDoctorProfile().subscribe(response => {
+
+      console.log(response);
+      localStorage.setItem("userName", response.Name);
+
+    });
+
+
     $(document).ready(function () {
       $("#menu-toggle").click(function (e) {
         e.preventDefault();
@@ -35,4 +40,19 @@ export class HomedoctorComponent implements OnInit {
 
 
   }
+
+
+
+
+
+  public getDoctorProfile(): Observable<any> {
+
+
+
+    //return this.http.get("./assets/json/insightsDoctor.json");
+    return this.http.get(`http://localhost:3000/doctors/${localStorage.getItem("userId")}`);
+
+
+  }
+
 }

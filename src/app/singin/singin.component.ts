@@ -30,8 +30,10 @@ export class SinginComponent implements OnInit {
       localStorage.setItem("token", response.token);
       localStorage.setItem("auth", "1");
       localStorage.setItem("type", `${response.user.userType}`)
+      localStorage.setItem("userId", response.user.userId);
+      console.log(`User id = ${response.user.userId}`)
       this.router.navigateByUrl(`/${response.user.userType}`, { replaceUrl: true });
-    }).catch((e: any) =>{
+    }).catch((e: any) => {
     });
 
     /*
