@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient } from "@angular/common/http";
+import { AgmCoreModule } from '@agm/core';
+
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -39,7 +41,8 @@ import { TokenInterceptor } from './token.interceptor';
 
 import { ChartsModule } from 'ng2-charts';
 
-import {FsqService} from './fsq.service'
+import {FsqService} from './fsq.service';
+import { GmapsComponent } from './gmaps/gmaps.component'
 
 @NgModule({
   declarations: [
@@ -64,7 +67,8 @@ import {FsqService} from './fsq.service'
     InsightsDoctorComponent,
     EstudioInterpretarComponent,
     LogoutComponent,
-    InsightsPatientComponent
+    InsightsPatientComponent,
+    GmapsComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,9 @@ import {FsqService} from './fsq.service'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDbB45sm1a2C2mRMoglej8G7LgNy0f-Ljs'
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
