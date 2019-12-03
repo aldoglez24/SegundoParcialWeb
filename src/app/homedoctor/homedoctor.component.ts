@@ -21,6 +21,11 @@ export class HomedoctorComponent implements OnInit {
 
   ngOnInit() {
 
+    var auth = localStorage.getItem("auth");
+    var auth = localStorage.getItem("auth");
+    var auth = localStorage.getItem("auth");
+
+    
     $(document).ready(function () {
       $("#menu-toggle").click(function (e) {
         e.preventDefault();

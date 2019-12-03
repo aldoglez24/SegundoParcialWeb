@@ -31,6 +31,13 @@ export class InsightsDoctorComponent implements OnInit {
 
 
   public getJSON(): Observable<any> {
-    return this.http.get("./assets/json/insightsDoctor.json");
+
+
+    
+    //return this.http.get("./assets/json/insightsDoctor.json");
+    return this.http.get('http://localhost:3000/insights-doctors');
+
+
+
   }
 }

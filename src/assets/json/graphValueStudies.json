@@ -1,17 +1,17 @@
 [
     {
         "study": "Gripe",
-        "value": "456",
+        "value": "20",
         "color": "rgba(255,0,0,0.3)"
     },
     {
         "study": "Electrocardiograma",
-        "value": "456",
+        "value": "50",
         "color": "rgba(0,255,0,0.3)"
     },
     {
         "study": "Neumología",
-        "value": "150",
+        "value": "30",
         "color": "rgba(0,0,255,0.3)"
     }
 ]

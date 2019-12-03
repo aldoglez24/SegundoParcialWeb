@@ -37,6 +37,7 @@
 
     <div>
       <div>
+        <h2>Estudios interpretados</h2>
         <div class="chart" style="margin: 30px;">
           <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
             [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
@@ -77,9 +78,9 @@
           <div class="topDrs-item mx-auto mb-5 mb-lg-0">
             <img class="img-thumbnail rounded-circle mb-3" src="{{ doctor.photo }}" alt="topDr1" max-height="300"
               max-width="300" />
-            <h5>{{ doctor.name }}</h5>
+            <h5>{{ doctor.Name }}</h5>
             <p class="font-weight-light mb-0">
-              {{ doctor.position | translate }}
+              {{ doctor.Position | translate }}
             </p>
           </div>
         </div>

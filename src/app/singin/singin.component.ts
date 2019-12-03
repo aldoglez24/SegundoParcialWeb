@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
 
 import { LoginKeys } from "../login-keys";
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: "app-singin",
@@ -17,15 +18,30 @@ export class SinginComponent implements OnInit {
     this.loginKeys = new LoginKeys(); //Se declara vacio por los simbolos de ? de Alumno.ts
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   login(form: NgForm) {
     console.log(form.value);
 
-    var route = this.auth.login(form.value.email, form.value.password);
+    var credentials = this.auth.login(form.value.email, form.value.password);
 
+    credentials.then(response => {
+      console.log(response)
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("auth", "1");
+      localStorage.setItem("type", `${response.user.userType}`)
+      this.router.navigateByUrl(`/${response.user.userType}`, { replaceUrl: true });
+    }).catch((e: any) =>{
+    });
+
+    /*
     if (route != "") {
-      this.router.navigateByUrl(`/${route}`);
+      this.router.navigateByUrl(`/${route}`, { replaceUrl: true });
     }
+    */
+
   }
+
+
+
 }

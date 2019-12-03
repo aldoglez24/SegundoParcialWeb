@@ -31,9 +31,15 @@ import { EstudioInterpretarComponent } from "./estudio-interpretar/estudio-inter
 import { LogoutComponent } from './logout/logout.component';
 import { InsightsPatientComponent } from './insights-patient/insights-patient.component';
 
+//Interceptors
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './token.interceptor';
+
 
 import { ChartsModule } from 'ng2-charts';
 
+import {FsqService} from './fsq.service'
 
 @NgModule({
   declarations: [
@@ -76,10 +82,16 @@ import { ChartsModule } from 'ng2-charts';
       }
     })
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  },
+  FsqService
+],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

@@ -4,8 +4,10 @@ import { Observable } from "rxjs/Observable";
 import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { Router } from "@angular/router";
 
 
+import {FsqService} from '../fsq.service'
 
 import {
   trigger,
@@ -54,7 +56,7 @@ export class IndexComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient) {
+  constructor(private fsqService:FsqService, private router: Router,private http: HttpClient) {
 
     this.getJSONGraph().subscribe(response => {
       this.graphValues = response;
@@ -80,15 +82,34 @@ export class IndexComponent implements OnInit {
       ];
 
     });
-
-
-
-
   }
 
   ngOnInit() {
+
+
+    this.fsqService.getPlaces() 
+      .subscribe(
+      (data) => { // Success
+        console.log(data);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+
+    if(localStorage.getItem("auth")=="1"){
+      var type =  localStorage.getItem("type");
+      this.router.navigateByUrl(`/${type}`, { replaceUrl: true });
+
+    }
+
+
+
+
     this.getJSON().subscribe(response => {
       //Estos son los 3 mejores doctores, se despliegan en el index, salen del JSON
+      console.log(response)
       this.doctors = response;
     });
 
@@ -96,11 +117,14 @@ export class IndexComponent implements OnInit {
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get("./assets/json/bestDoctors.json");
+    //return this.http.get("./assets/json/bestDoctors.json");
+    return this.http.get("http://localhost:3000/top-doctors");
+
   }
 
   public getJSONGraph(): Observable<any> {
-    return this.http.get("./assets/json/graphValueStudies.json");
+    //return this.http.get("./assets/json/graphValueStudies.json");
+    return this.http.get("http://localhost:3000/top-studies");
   }
 
 

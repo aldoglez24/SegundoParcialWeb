@@ -67,6 +67,13 @@ export class AppComponent {
 
         this.isHide(event);
 
+
+
+
+
+
+
+
       }
     });
   }

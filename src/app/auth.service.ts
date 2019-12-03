@@ -1,4 +1,12 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs/Observable";
+
+import { Component, HostBinding, Input, OnInit, Output } from "@angular/core";
+
+import { ChartType, ChartOptions } from 'chart.js';
+import { Label } from 'ng2-charts';
+import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 @Injectable({
   providedIn: "root"
@@ -7,24 +15,49 @@ export class AuthService {
   isLoggedIn = false;
   loginType = "";
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) { }
 
-  login(email, password) {
+  login(email, password){
+
     var route = "";
 
-    if (email == "doctor") {
-      this.isLoggedIn = true;
-      this.loginType = "doctor";
-      route = "doctor";
-    } else if (email == "paciente") {
-      this.isLoggedIn = true;
-      this.loginType = "paciente";
-      route = "paciente";
-    }
 
-    localStorage.setItem("auth", this.isLoggedIn ? "1" : "0");
-    email && localStorage.setItem("type", email);
 
-    return route;
+    var credentials = this.getTokenLogin(email, password).toPromise()
+
+    return credentials;
+    
   }
+
+
+
+  ngOnInit() {
+
+  }
+
+  public getToken(): string {
+    return localStorage.getItem('token');
+  }
+
+  public getTokenLogin(email: string, password: string): Observable<any> {
+    //return this.http.get("./assets/json/bestDoctors.json");
+    return this.httpClient.post("http://localhost:3000/users/login",
+
+
+
+      {
+        "email": `${email}`,
+        "password": `${password}`,
+      }
+
+
+
+    )
+  }
+
+  public isAuthenticated(): string {
+    return localStorage.getItem('isLoggedIn');
+  }
+
+
 }
