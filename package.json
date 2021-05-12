@@ -22,7 +22,7 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.9.2",
+    "chart.js": "^2.9.4",
     "jquery": "^3.4.1",
     "ng2-charts": "^2.3.0",
     "popper.js": "^1.16.0",
